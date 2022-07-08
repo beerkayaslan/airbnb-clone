@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+    @apply font-roboto text-sm text-[#484848] leading-6 antialiased;
+}
+
+header {
+    @apply h-20 border-b z-50 sticky top-0 bg-white;
+}
+
+header .header-inner {
+    @apply flex items-center justify-between h-full;
+}
+
+header .header-inner > div{
+    @apply 2xl:flex-1 xl:flex-1 flex items-center;
+}
+
+header .header-inner .logo{
+    @apply hidden md:block;
+}
+
+header .header-inner .logo svg{
+    @apply fill-brand-color w-[35px] lg:w-[102px];
+}
+
+header .header-inner .logo svg .airbnb-text-logo{
+    @apply hidden lg:block;
+}
+
+header .header-inner .search{
+    @apply flex items-center justify-center xl:flex-[2] flex-1;
+}
+
+header .header-inner .search .search-inner{
+    @apply flex items-center border h-12 rounded-full transition shadow-md hover:shadow-lg;
+}
+
+header .header-inner .search .search-inner .vertical-line {
+    @apply h-6 w-[1px] bg-gray-200;
+}
+
+header .header-inner .search .search-inner button{
+    @apply flex items-center;
+}
+
+header .header-inner .search .search-inner button.left{
+    @apply pl-6 pr-4 font-medium whitespace-nowrap;
+}
+
+header .header-inner .search .search-inner button.center{
+    @apply px-4 font-medium whitespace-nowrap;
+}
+
+header .header-inner .search .search-inner button.right{
+    @apply pl-4 pr-2 text-gray-400 whitespace-nowrap;
+}
+
+header .header-inner .search .search-inner button.right div{
+    @apply bg-brand-color w-8 h-8 rounded-full flex items-center justify-center ml-4;
+}
+
+header .header-inner .search .search-inner button.right div svg{
+    @apply fill-white w-3 h-3;
+}
+
+header .header-inner .user{
+    @apply hidden md:flex items-center justify-end;
+}
+
+header .header-inner .user .left-buttons {
+    @apply flex items-center justify-center mr-3;
+}
+
+header .header-inner .user .left-buttons button{
+    @apply p-3 rounded-full hover:bg-gray-100 select-none font-medium hover:bg-opacity-70;
+}
+
+header .header-inner .user .user-dropdown{
+    @apply z-50;
+}
+
+header .header-inner .user .user-dropdown .header-user-icon{
+    @apply border rounded-full transition flex p-3 gap-x-3 hover:shadow-md;
+}
+
+header .header-inner .user .user-dropdown .header-user-icon .user-circle-icon{
+    @apply fill-gray-500;
+}
+
+main .categories{
+    @apply pt-4 z-40 sticky top-20 bg-white transition-shadow;
+}
+
+main .categories .container{
+    @apply flex items-center px-4 md:p-0;
+}
+
+main .categories .container .filter-btn{
+    @apply flex border rounded-lg px-6 py-4 items-center justify-center mb-2;
+}
+
+main .categories .container .filter-btn span{
+    @apply ml-2 text-xs font-medium;
+}
+
+main .categories .container .category-list{
+    @apply mr-4 flex-1;
+}
+
+main .categories .container .category-list .category-item{
+    @apply flex flex-col items-center transition-all cursor-pointer pb-3 pt-1 border-b-2 border-b-transparent hover:border-b-gray-400 contrast-50 hover:contrast-200 select-none;
+}
+
+main .categories .container .category-list .category-item.active-category{
+    @apply border-b-gray-700 contrast-200;
+}
+
+main .categories .container .category-list .category-item img{
+    @apply w-6 h-6 object-contain mb-3;
+}
+
+main .categories .container .category-list .category-item span{
+    @apply text-xs;
+}
+
+main .card-list {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-5 xl:grid-cols-4 2xl:grid-cols-5 pb-20 px-4 md:p-0;
+}
+
+main .card-list .card-item{
+    @apply relative;
+}
+
+main .card-list .card-item .swiper  .swiper-button-prev,main .card-list .card-item .swiper .swiper-button-next{
+    @apply opacity-0 bg-opacity-90 hover:bg-opacity-100;
+}
+main .card-list .card-item .swiper  .swiper-button-prev.swiper-button-disabled,main .card-list .card-item .swiper .swiper-button-next.swiper-button-disabled{
+    @apply hidden;
+}
+
+main .card-list .card-item .swiper .swiper-pagination  .swiper-pagination-bullet{
+    @apply bg-gray-200;
+}
+main .card-list .card-item .swiper:hover .swiper-button-prev,main .card-list .card-item .swiper:hover .swiper-button-next{
+    @apply opacity-100;
+}
+
+main .card-list .card-item .swiper img{
+    @apply h-72 object-cover w-full;
+}
+
+main .card-list .card-item .heart-icon{
+    filter: drop-shadow(1px 0 0 antiquewhite) drop-shadow(-1px 0 0 antiquewhite) drop-shadow(0 1px 0 antiquewhite) drop-shadow(0 -1px 0 antiquewhite);
+    @apply fill-gray-600 opacity-80
+}
+
+.swiper .swiper-button-prev,.swiper .swiper-button-next{
+    @apply bg-white rounded-full h-7 w-7 drop-shadow-xl hover:scale-110 transition-all ;
+}
+
+.swiper .swiper-button-prev.swiper-button-disabled,.swiper-button-next.swiper-button-disabled{
+    @apply hidden;
+}
+
+.swiper .swiper-button-prev::after,.swiper .swiper-button-next::after{
+    @apply text-xs font-semibold text-gray-900;
+}
+
+footer .footer-left a{
+    @apply before:w-1 before:h-1 before:bg-gray-300 before:rounded-full before:block flex items-center gap-x-2
+}
+
+
+.container {
+    @apply mx-auto;
+}
