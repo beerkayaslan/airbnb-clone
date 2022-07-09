@@ -34,7 +34,7 @@ export default function CardItem({item}) {
                         simulateTouch={false}
                         modules={[Navigation, Pagination]}>
                         {
-                            item.img && item.img.map(img => <SwiperSlide> <img src={img} /></SwiperSlide>)
+                            item.img && item.img.map((img, index) => <SwiperSlide key={index}> <img src={img} /></SwiperSlide>)
                         }
                     </Swiper>
                     <AiFillHeart size={24} className="absolute top-4 right-4 z-20 stroke-white heart-icon"/>
